@@ -1,0 +1,86 @@
+{
+  "tool": "safesniff",
+  "mode": "permissioned_safe_tcp_enumeration",
+  "metadata": {
+    "schema_version": "1.1",
+    "generated_by": "safesniff",
+    "generated_at_unix": 1778420048,
+    "generated_at_local": "2026-05-10T15:34:10+0200",
+    "scanner_hostname": "example-scanner.local",
+    "scan_profile": "light",
+    "timeout_ms": 450,
+    "tested_host_count": 2,
+    "tested_port_count": 6,
+    "total_tcp_connect_attempts_planned": 12
+  },
+  "profile": "light",
+  "target": "192.0.2.0/30",
+  "target_detection": {
+    "source": "explicit_target",
+    "interface": null,
+    "local_ip": "192.0.2.10",
+    "prefix": 30,
+    "confidence": "user_supplied",
+    "note": "Documentation sample using RFC 5737 addresses."
+  },
+  "tested_hosts": 2,
+  "tested_ports": [22, 53, 80, 443, 445, 3389],
+  "device_inventory": {
+    "observed_device_count": 2,
+    "active_with_open_services": 1,
+    "active_without_open_services": 1,
+    "inactive_address_count": 0,
+    "note": "Sample output for documentation; not a real network scan.",
+    "devices": [
+      {
+        "ip": "192.0.2.1",
+        "label": "example-router.local",
+        "likely_role": "router_or_gateway",
+        "likely_os": "unix_like_or_mobile_probable",
+        "confidence": "low",
+        "exposure_level": "medium",
+        "open_service_count": 2,
+        "high_count": 0,
+        "medium_count": 2,
+        "open_ports": [53, 443],
+        "service_names": ["dns", "https"],
+        "security_review_priority": "medium",
+        "risk_tags": ["network_or_discovery_surface", "web_admin_or_app_surface"],
+        "ai_correlation_terms": ["dns tcp/53", "https tcp/443", "role router_or_gateway"]
+      },
+      {
+        "ip": "192.0.2.2",
+        "label": "example-workstation.local",
+        "likely_role": "observed_endpoint",
+        "likely_os": "unknown",
+        "confidence": "none",
+        "exposure_level": "minimal",
+        "open_service_count": 0,
+        "high_count": 0,
+        "medium_count": 0,
+        "open_ports": [],
+        "service_names": [],
+        "security_review_priority": "informational",
+        "risk_tags": [],
+        "ai_correlation_terms": ["role observed_endpoint"]
+      }
+    ]
+  },
+  "summary": {
+    "overall": "warnings",
+    "active_hosts": 2,
+    "inactive_or_unobserved_hosts": 0,
+    "hosts_with_open_services": 1,
+    "observed_hosts": 2,
+    "open_service_count": 2,
+    "high_count": 0,
+    "medium_count": 2
+  },
+  "safety": {
+    "exploit_checks": false,
+    "credential_attempts": false,
+    "bruteforce": false,
+    "persistence": false,
+    "packet_capture": false
+  }
+}
