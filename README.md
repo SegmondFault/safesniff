@@ -1,12 +1,10 @@
 # SafeSniff
 
-SafeSniff is a Rust-based, low-impact TCP service discovery tool for defensive
+Built primarily as module for scan-asses, SafeSniff is a Rust-based, low-impact TCP service discovery tool for defensive
 security assessment. It inspects an authorised IPv4 host or small subnet and
 writes a structured JSON report to stdout.
 
-It is intended for small organisation reviews, lab validation, and
-`scan-assess` module use. SafeSniff does not exploit services, attempt
-credentials, brute-force, persist, modify remote systems, or capture packets.
+For any serious pentesting, just use nmap, but if you need a mini multi platform binary you can deploy on a remote host this might be helpful.
 
 ## Standalone Use
 
